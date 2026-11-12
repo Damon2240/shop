@@ -5,6 +5,11 @@ from .models import Category, Product
 from .serializers import CategorySerializer, ProductSerializer
 
 
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'index.html')
+
 class IsAdminOrReadOnly(permissions.BasePermission):
     """همه می‌توانند ببینند، فقط ادمین می‌تواند تغییر دهد."""
 
